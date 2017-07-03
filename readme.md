@@ -3,6 +3,7 @@
 - sample1.php 單一圖片輸出mp4
 - sample2.php 多圖片輸出mp4
 - sample3.php 多圖片+音樂輸出mp4
+- sample4.php 多圖片(各別圖片停留時間)+音樂輸出mp4
 
 ## CentOS Install FFmpeg 
 
