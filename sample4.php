@@ -33,10 +33,27 @@ foreach($tsVideo as $video){
 $insertAudio = './assets/audio/sample-01.mp3';
 $outputFile = './output/im-movie-sample4.mp4';
 
-$exec = 'ffmpeg  -i '.$insertAudio.' -strict -2 -i concat:"./output/im-movie-sample4-02.ts|./output/im-movie-sample4-01.ts" -c copy '.$outputFile;
+$exec = 'ffmpeg  -i '.$insertAudio.' -strict -2 -i concat:"./output/im-movie-sample4-02.ts|./output/im-movie-sample4-01.ts" -c:a copy -f mp4 -s 720x540 '.$outputFile;
 exec("${exec} -y 2>&1", $result, $is_fail);
 
 //=================================結果======================================
 echo '<pre>';
 print_r(compact('result','is_fail'));
+?>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- TITLE -->
+    <title>測試</title>
+
+</head>
+<body>
+   
+    <video src="./output/im-movie-sample4.mp4" controls autoplay loop>
+    Your browser does not support the <code>video</code> element.
+    </video>
+</body>
+</html>
